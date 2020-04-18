@@ -22,6 +22,12 @@ DEP_CFLAGS="-I${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/include"
 DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
 
 ./configure \
+  --enable-demuxer=rtsp\
+  --disable-devices \
+  --disable-outdevs \
+  --disable-yasm \
+  --disable-doc \
+  --disable-programs \
   --prefix=${BUILD_DIR_FFMPEG}/${ANDROID_ABI} \
   --enable-cross-compile \
   --target-os=android \
@@ -31,8 +37,9 @@ DEP_LD_FLAGS="-L${BUILD_DIR_EXTERNAL}/${ANDROID_ABI}/lib $FFMPEG_EXTRA_LD_FLAGS"
   --cc=${FAM_CC} \
   --extra-cflags="-O3 -fPIC $DEP_CFLAGS" \
   --extra-ldflags="$DEP_LD_FLAGS" \
-  --enable-shared \
-  --disable-static \
+  --enable-static \
+  --disable-shared \
+  --disable-asm \
   --pkg-config=$(which pkg-config) \
   ${EXTRA_BUILD_CONFIGURATION_FLAGS} \
   $ADDITIONAL_COMPONENTS
