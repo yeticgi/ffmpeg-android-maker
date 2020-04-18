@@ -6,6 +6,20 @@
 
 <img src="https://github.com/Javernaut/ffmpeg-android-maker/blob/master/images/output_structure.png" width="280" align="right">
 
+## Notice
+
+This fork has customized the FFmpeg build to produce static libraries with RTSP included.
+
+## Usage
+
+```bash
+# Builds a statically linked version of ffmpeg from the n2.8.15 git tag
+# The outputs will be in the build/ffmpeg/arm64-v8a/lib folder.
+./ffmpeg-android-maker.sh --source-git-tag=n2.8.15
+```
+
+## Description
+
 Here is a script that downloads the source code of [FFmpeg](https://www.ffmpeg.org) library and assembles it for Android. The script produces shared libraries (\*.so files) as well as header files (\*.h files). The output structure is represented in the image.
 
 The script also produces `ffmpeg` and `ffprobe` executables that can be used in Android's terminal directly or can even be embedded into an Android app. They can be found in `build` directory after the successful build.
