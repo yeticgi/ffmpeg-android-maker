@@ -100,7 +100,7 @@ done
 # ABIs to build FFmpeg for.
 # x86 is the first, because it is likely to have Text Relocations.
 # In this case the rest ABIs will not be assembled at all.
-ABIS_TO_BUILD=( "x86" "x86_64" "armeabi-v7a" "arm64-v8a" )
+ABIS_TO_BUILD=( "arm64-v8a" )
 
 for ABI in ${ABIS_TO_BUILD[@]}
 do
